@@ -27,13 +27,13 @@ namespace SeleniumNUnitParam
         [Test]
         public void ExecuteAutomationTest()
         {
-            Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
-            Driver.FindElement(By.Name("UserName")).SendKeys("admin");
-            Driver.FindElement(By.Name("Password")).SendKeys("admin");
-            Driver.FindElement(By.Name("Login")).Submit();
+            Driver.Navigate().GoToUrl("http://autotest.in/service/Loan_Management_System_old/index.php");
+            Driver.FindElement(By.Name("email")).SendKeys("admin@gmail.com");
+            Driver.FindElement(By.Name("pass")).SendKeys("admin");
+            Driver.FindElement(By.Name("login")).click();
             System.Threading.Thread.Sleep(2000);
-            Assert.That(Driver.PageSource.Contains("Selenium"), Is.EqualTo(true),
-                                            "The text selenium doest not exist");
+            Assert.That(Driver.PageSource.Contains("Welcome Admin!"), Is.EqualTo(true),
+                                            "The text welcome admin doest not exist");
 
         }
 
