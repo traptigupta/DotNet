@@ -25,14 +25,14 @@ namespace SeleniumNUnitParam
         }
 
         [Test]
-        public void ExecuteAutomationTest()
+        public void AutomationTest()
         {
             Driver.Navigate().GoToUrl("http://autotest.in/service/Loan_Management_System_old/index.php");
             Driver.FindElement(By.Name("email")).SendKeys("admin@gmail.com");
             Driver.FindElement(By.Name("pass")).SendKeys("admin");
             Driver.FindElement(By.Name("login")).Click();
             System.Threading.Thread.Sleep(2000);
-            Assert.That(Driver.PageSource.Contains("Welcome Admin!"), Is.EqualTo(true),
+            Assert.That(Driver.PageSource.Contains("Dashboard"), Is.EqualTo(true),
                                             "The text welcome admin doest not exist");
 
         }
